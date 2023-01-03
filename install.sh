@@ -29,6 +29,7 @@ for dotfile in "$DOTFILES_CLONE_PATH/".*; do
   [[ $dotfile =~ \.gitignore$ ]] && continue
   [[ $dotfile =~ \.gitattributes$ ]] && continue
   [[ $dotfile =~ \.github$ ]] && continue
+  [[ $dotfile =~ README.md$ ]] && continue
 
   echo "Symlinking $dotfile"
   ln -sf "$dotfile" "$HOME"
