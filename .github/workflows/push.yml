@@ -1,0 +1,22 @@
+name: Push
+
+on:
+  pull_request:
+  push:
+    branches:
+    - main
+
+jobs:
+  integration-test-install-sh:
+    name: run `install.sh` on `ubuntu-latest`
+    runs-on: ubuntu-latest
+    container:
+      image: docker.io/homebrew/ubuntu22.04
+    steps:
+      - uses: actions/checkout@v3
+        name: Clone this repository
+
+      - name: Run `install.sh`
+        run: |
+          ./install.sh
+          zsh -c 'echo $SHELL'

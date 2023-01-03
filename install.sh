@@ -3,7 +3,7 @@
 echo "Installation script now running..."
 
 # set GOPATH
-echo 'Setting GOPATH to HOME'
+echo "Setting GOPATH to HOME"
 export GOPATH=$HOME
 
 # install zsh
@@ -16,7 +16,7 @@ echo "Installing ohmyz.sh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # setup work directories
-"Setting up work directories"
+echo "Setting up work directories"
 mkdir -p ~/src/github.com/lacework/agent
 
 # symlink dotfiles (copied from coder default script)
@@ -28,11 +28,8 @@ for dotfile in "$DOTFILES_CLONE_PATH/".*; do
   [[ $dotfile =~ \.git$ ]] && continue
   [[ $dotfile =~ \.gitignore$ ]] && continue
   [[ $dotfile =~ \.gitattributes$ ]] && continue
+  [[ $dotfile =~ \.github$ ]] && continue
 
   echo "Symlinking $dotfile"
   ln -sf "$dotfile" "$HOME"
 done
-
-# launch zsh
-echo "Launching zsh"
-exec zsh -l
