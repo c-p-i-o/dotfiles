@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker.io/homebrew/ubuntu22.04
+      options: --user root
     steps:
       - uses: actions/checkout@v3
         name: Clone this repository
