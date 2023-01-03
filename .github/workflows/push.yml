@@ -10,13 +10,17 @@ jobs:
   integration-test-install-sh:
     name: run `install.sh` on `ubuntu-latest`
     runs-on: ubuntu-latest
-    container:
-      image: docker.io/homebrew/ubuntu22.04
     steps:
-      - uses: actions/checkout@v3.0.2
+      - uses: actions/checkout@v3
         name: Clone this repository
+
+      - name: Install homebrew dependency
+        run: |
+          NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /root/.profile
 
       - name: Run `install.sh`
         run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           ./install.sh
           zsh -c 'echo $SHELL'
