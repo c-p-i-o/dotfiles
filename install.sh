@@ -8,7 +8,8 @@ export GOPATH=$HOME
 
 # install zsh
 echo "Installing zsh"
-brew install zsh
+sudo apt-get update
+sudo apt-get install -y zsh
 sudo chsh -s $(which zsh)
 
 # install ohmyz.sh
