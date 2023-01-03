@@ -1,16 +1,10 @@
-#!/usr/bin/bash
+#!/bin/zsh
 
-echo "Installation script now running..."
+echo "Installation script now running with shell $(readlink -f /proc/$$/exe)..."
 
 # set GOPATH
 echo "Setting GOPATH to HOME"
 export GOPATH=$HOME
-
-# install zsh
-echo "Installing zsh"
-sudo apt-get update
-sudo apt-get install -y zsh
-sudo chsh -s $(which zsh)
 
 # install ohmyz.sh
 echo "Installing ohmyz.sh"

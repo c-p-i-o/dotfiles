@@ -16,5 +16,7 @@ jobs:
 
       - name: Run `install.sh`
         run: |
+          sudo apt-get update
+          sudo apt-get install -y zsh
           ./install.sh
-          zsh -c 'echo $SHELL'
+          zsh -c 'echo $(readlink -f /proc/$$/exe)' # check that zsh does not error
