@@ -1,6 +1,7 @@
-#!/bin/zsh
+#!/bin/bash
 
 echo "Installation script now running with shell $(readlink -f /proc/$$/exe)..."
+cat /etc/shells
 
 # set GOPATH
 echo "Setting GOPATH to HOME"
