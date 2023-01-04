@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 echo "Installation script now running with shell $(readlink -f /proc/$$/exe)..."
 cat /etc/shells
