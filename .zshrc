@@ -6,9 +6,6 @@ export PATH=$PATH:$HOME.local/bin:$HOME.linuxbrew/bin:$HOME.cargo/bin:/usr/local
 # Set up GPG to write to the terminal
 export GPG_TTY=$(tty)
 
-# use pass for aws-vault secrets manager
-#export AWS_VAULT_BACKEND=pass
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
