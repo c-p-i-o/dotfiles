@@ -1,23 +1,11 @@
 #!/bin/zsh
 
-echo "Installation script now running with shell $(readlink -f /proc/$$/exe)..."
-cat /etc/shells
-
-# set GOPATH
-echo "Setting GOPATH to HOME"
-export GOPATH=$HOME
-
 # install ohmyz.sh
 echo "Installing ohmyz.sh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # install p10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-# setup work directories
-echo "Setting up work directories"
-mkdir -p ~/src/github.com/lacework/agent
-mkdir -p ~/src/github.com/lacework-dev
 
 # symlink dotfiles (adapted from coder default script)
 echo "Symlinking dotfiles"
@@ -47,3 +35,6 @@ done
 # install Homebrew dependencies
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew bundle install --no-upgrade --file=./Brewfile
+
+# Lacework-specific setup
+./setup_lacework.sh
