@@ -1,15 +1,7 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# add pip scripts to path
-export PATH=$PATH:/home/ubuntu/.local/bin:/home/ubuntu/.linuxbrew/bin:/home/ubuntu/.cargo/bin:/usr/local/go/bin:$(/usr/local/go/bin/go env GOPATH)/bin:/home/ubuntu/work/bin
+# setup PATH
+export PATH=$PATH:$HOME.local/bin:$HOME.linuxbrew/bin:$HOME.cargo/bin:/usr/local/go/bin:/bin:$HOME/work/bin
 
 # Set up GPG to write to the terminal
 export GPG_TTY=$(tty)
@@ -18,7 +10,7 @@ export GPG_TTY=$(tty)
 #export AWS_VAULT_BACKEND=pass
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/$HOME/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # GPG settings
 export GPG_TTY=$TTY
@@ -154,7 +146,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # inserted for gh cli autocompletion
 autoload -U compinit
 compinit -i
-eval "$(/home/$HOME/.linuxbrew/bin/brew shellenv)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

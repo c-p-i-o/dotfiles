@@ -7,12 +7,12 @@ cat /etc/shells
 echo "Setting GOPATH to HOME"
 export GOPATH=$HOME
 
-# install Homebrew
-# NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # install ohmyz.sh
 echo "Installing ohmyz.sh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# install p10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # setup work directories
 echo "Setting up work directories"
