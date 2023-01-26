@@ -18,7 +18,7 @@ export GPG_TTY=$(tty)
 #export AWS_VAULT_BACKEND=pass
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/ubuntu/.oh-my-zsh"
+export ZSH="/home/$HOME/.oh-my-zsh"
 
 # GPG settings
 export GPG_TTY=$TTY
@@ -145,18 +145,16 @@ alias gst="git stash"
 alias gd="git diff"
 alias gds="git diff --staged"
 
-#alias aws="aws-vault exec default -- aws"
 alias av="aws-vault exec default -- "
-alias cdag="cd ~/work/src/github.com/lacework/agent"
-#alias ea="bash ~/work/eas.sh"
-alias ea="aws-vault exec default -- sh -c 'earthly --build-arg AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID --build-arg AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY --build-arg AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN'"
+alias cdag="cd ~/lwcode/src/github.com/lacework/agent"
+alias ea="aws-vault exec integration-tests -- earthly --secret AWS_ACCESS_KEY_ID --secret AWS_SECRET_ACCESS_KEY --secret AWS_SESSION_TOKEN --secret AWS_REGION"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 # inserted for gh cli autocompletion
 autoload -U compinit
 compinit -i
-eval "$(/home/ubuntu/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/$HOME/.linuxbrew/bin/brew shellenv)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

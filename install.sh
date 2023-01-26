@@ -7,6 +7,9 @@ cat /etc/shells
 echo "Setting GOPATH to HOME"
 export GOPATH=$HOME
 
+# install Homebrew
+# NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 # install ohmyz.sh
 echo "Installing ohmyz.sh"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
@@ -14,6 +17,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # setup work directories
 echo "Setting up work directories"
 mkdir -p ~/src/github.com/lacework/agent
+mkdir -p ~/src/github.com/lacework-dev
 
 # symlink dotfiles (adapted from coder default script)
 echo "Symlinking dotfiles"
