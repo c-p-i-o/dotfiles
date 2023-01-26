@@ -26,7 +26,8 @@ jobs:
           export NONINTERACTIVE=1
           /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-      - name: Test `install.sh` and `.zshrc`
+      - name: Test setup files
         run: |
           ./install.sh
           zsh -c 'source .zshrc'
+          zsh -c 'source .zprofile'

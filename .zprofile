@@ -1,1 +1,1 @@
-eval "$(/home/ubuntu/.linuxbrew/bin/brew shellenv)"
+eval "$($HOME/.linuxbrew/bin/brew shellenv)"
