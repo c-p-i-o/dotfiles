@@ -7,17 +7,20 @@ on:
     - main
 
 jobs:
-  integration-test-install-sh:
-    name: run `install.sh` on `ubuntu-latest`
+  integration-tests:
+    name: Integration tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         name: Clone this repository
 
-      - name: Run `install.sh`
+      - name: Setup `zsh`
         run: |
           sudo apt-get update
-          sudo apt-get install -y zsh
-          ./install.sh
+          sudo apt-get install -y .zsh
           zsh -c 'echo $(readlink -f /proc/$$/exe)' # check that zsh does not error
-          zsh -c 'source .zshrc' # test terminal setup
+
+      - name: Test `install.sh` and `.zshrc`
+        run: |
+          ./install.sh
+          zsh -c 'source .zshrc'
