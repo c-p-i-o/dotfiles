@@ -10,8 +10,6 @@ jobs:
   integration-tests:
     name: Integration tests
     runs-on: ubuntu-latest
-    container:
-      image: docker.io/homebrew/brew
     steps:
       - uses: actions/checkout@v3
         name: Clone this repository
@@ -21,6 +19,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y .zsh
           zsh -c 'echo $(readlink -f /proc/$$/exe)' # check that zsh does not error
+
+      - name: Setup Homebrew
+        run: |
+          export HOMEBREW_INSTALL_FROM_API=1
+          export NONINTERACTIVE=1
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
 
       - name: Test `install.sh` and `.zshrc`
         run: |
