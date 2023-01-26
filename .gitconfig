@@ -1,6 +1,6 @@
 [user]
 	name = Nick Schmeller
-	email = nick.schmeller@lacework.net
+	email = 26189705+nschmeller@users.noreply.github.com
 [pull]
 	rebase = true
 [credential "https://github.com"]
@@ -9,3 +9,5 @@
 [credential "https://gist.github.com"]
         helper =
         helper = !/home/linuxbrew/.linuxbrew/bin/gh auth git-credential
+[gpg]
+        format = ssh
