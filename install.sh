@@ -7,26 +7,26 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # install p10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# symlink dotfiles (adapted from coder default script)
-echo "Symlinking dotfiles"
+# copy dotfiles (adapted from coder default script)
+echo "Copying dotfiles"
 for dotfile in "$(pwd)/".*; do
   # Skip Git related
   if [[ $dotfile =~ \.git$ ]]; then
-    echo "not linking .git"
+    echo "not copying .git"
     continue
   elif [[ $dotfile =~ \.gitignore$ ]]; then
-    echo "not linking .gitignore"
+    echo "not copying .gitignore"
     continue
   elif [[ $dotfile =~ \.gitattributes$ ]]; then
-    echo "not linking .gitattributes"
+    echo "not copying .gitattributes"
     continue
   elif [[ $dotfile =~ \.github$ ]]; then
-    echo "not linking .github"
+    echo "not copying .github"
     continue
   fi
 
-  echo "Symlinking $dotfile"
-  ln -sf "$dotfile" "$HOME"
+  echo "Copying $dotfile"
+  cp "$dotfile" "$HOME"
 done
 
 # Lacework-specific setup
