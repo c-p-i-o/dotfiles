@@ -21,6 +21,4 @@ jobs:
           zsh -c 'echo $(readlink -f /proc/$$/exe)' # check that zsh does not error
 
       - name: Test setup files
-        run: |
-          ./install.sh
-          zsh -c 'source .zshrc'
+        run: ./test.sh
