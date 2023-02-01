@@ -20,14 +20,7 @@ jobs:
           sudo apt-get install -y .zsh
           zsh -c 'echo $(readlink -f /proc/$$/exe)' # check that zsh does not error
 
-      - name: Setup Homebrew
-        run: |
-          export HOMEBREW_INSTALL_FROM_API=1
-          export NONINTERACTIVE=1
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
       - name: Test setup files
         run: |
           ./install.sh
           zsh -c 'source .zshrc'
-          zsh -c 'source .zprofile'

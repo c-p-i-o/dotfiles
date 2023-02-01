@@ -32,9 +32,5 @@ for dotfile in "$(pwd)/".*; do
   ln -sf "$dotfile" "$HOME"
 done
 
-# install Homebrew dependencies
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-brew bundle install --no-upgrade --file=./Brewfile
-
 # Lacework-specific setup
 ./setup_lacework.sh
