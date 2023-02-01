@@ -14,16 +14,13 @@ for dotfile in "$(pwd)/".*; do
   if [[ $dotfile =~ \.git$ ]]; then
     echo "not linking .git"
     continue
-  fi
-  if [[ $dotfile =~ \.gitignore$ ]]; then
+  elif [[ $dotfile =~ \.gitignore$ ]]; then
     echo "not linking .gitignore"
     continue
-  fi
-  if [[ $dotfile =~ \.gitattributes$ ]]; then
+  elif [[ $dotfile =~ \.gitattributes$ ]]; then
     echo "not linking .gitattributes"
     continue
-  fi
-  if [[ $dotfile =~ \.github$ ]]; then
+  elif [[ $dotfile =~ \.github$ ]]; then
     echo "not linking .github"
     continue
   fi
