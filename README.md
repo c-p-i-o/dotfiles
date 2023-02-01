@@ -11,7 +11,6 @@ Please feel free to take inspiration or suggest changes!
 * `zsh` is available as a shell at `/bin/zsh`
 * Packages are preinstalled. Some of these packages are:
   * `git`
-  * `aws-vault`
   * `aws`
   * `tmux`
   * `act`
