@@ -134,10 +134,6 @@ alias gst="git stash"
 alias gd="git diff"
 alias gds="git diff --staged"
 
-alias av="aws-vault exec default -- "
-alias cdag="cd ~/lwcode/src/github.com/lacework/agent"
-alias ea="aws-vault exec integration-tests -- earthly --secret AWS_ACCESS_KEY_ID --secret AWS_SECRET_ACCESS_KEY --secret AWS_SESSION_TOKEN --secret AWS_REGION"
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 # inserted for gh cli autocompletion
@@ -146,3 +142,6 @@ compinit -i
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Lacework-specific shell aliases
+source .lacework_profile

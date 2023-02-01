@@ -1,0 +1,11 @@
+alias av="aws-vault exec default -- "
+alias cdag="cd ~/lwcode/src/github.com/lacework/agent"
+alias ea="aws-vault exec integration-tests -- earthly --secret AWS_ACCESS_KEY_ID --secret AWS_SECRET_ACCESS_KEY --secret AWS_SESSION_TOKEN --secret AWS_REGION"
+alias awsint='export $(printf "AWS_ACCESS_KEY_ID=%s AWS_SECRET_ACCESS_KEY=%s AWS_SESSION_TOKEN=%s" \
+    $(aws sts assume-role \
+        --profile lw-admin-role-561021084946 \
+        --role-arn arn:aws:iam::561021084946:role/IntegrationTestsRole \
+        --role-session-name nick_devspace \
+        --query "Credentials.[AccessKeyId,SecretAccessKey,SessionToken]" \
+        --output text \
+    ))'
