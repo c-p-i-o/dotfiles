@@ -1,8 +1,14 @@
 #!/bin/zsh
 
-# setup shell
+# Setup shell
 ./install.sh
 source .zshrc
 
-# smoke tests
+# Smoke tests
+
+# Test aliases
 type awsint
+type cddot
+type cdag
+type cdcli
+type cddock

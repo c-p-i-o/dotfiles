@@ -7,3 +7,8 @@ alias awsint='export $(printf "AWS_ACCESS_KEY_ID=%s AWS_SECRET_ACCESS_KEY=%s AWS
         --query "Credentials.[AccessKeyId,SecretAccessKey,SessionToken]" \
         --output text \
     ))'
+
+# navigation aliases
+alias cdag="cd $HOME/lwcode/src/github.com/lacework/agent"
+alias cdcli="cd $HOME/lwcode/src/github.com/lacework/go-sdk"
+alias cddock="cd $HOME/lwcode/src/github.com/lacework-dev/lacework-docker"

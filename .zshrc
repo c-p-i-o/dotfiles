@@ -134,6 +134,8 @@ alias gst="git stash"
 alias gd="git diff"
 alias gds="git diff --staged"
 
+alias cddot="cd $HOME/lwcode/src/nschmeller/dotfiles"
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 # inserted for gh cli autocompletion
