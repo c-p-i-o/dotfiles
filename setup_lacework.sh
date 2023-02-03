@@ -1,9 +1,5 @@
 #!/bin/zsh
 
-# set GOPATH
-echo "Setting GOPATH to ~/lwcode"
-export GOPATH=$HOME/lwcode
-
 # setup work directories
 echo "Setting up work directories"
 LACEWORK_DIR=$GOPATH/src/github.com/lacework
