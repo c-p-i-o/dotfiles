@@ -146,4 +146,4 @@ compinit -i
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Lacework-specific shell aliases
-source .lacework_profile
+test -e "${HOME}/.lacework_profile" && source "${HOME}/.lacework_profile" || true
