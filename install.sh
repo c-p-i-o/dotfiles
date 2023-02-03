@@ -26,7 +26,7 @@ for dotfile in "$(pwd)/".*; do
   fi
 
   echo "Copying $dotfile"
-  cp "$dotfile" "$HOME"
+  cp -r "$dotfile" "$HOME"
 done
 
 # Lacework-specific setup
