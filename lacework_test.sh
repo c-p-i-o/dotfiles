@@ -1,4 +1,5 @@
 #!/bin/zsh
+set -Eeuo pipefail
 
 # Set Coder-specific environment variables
 export CODER_SSH_PUBKEY="$HOME/foobarbaz"
@@ -17,4 +18,4 @@ type cdcli
 type cddock
 
 # Check that GOPATH is set
-[[ -n $GOPATH ]] || (echo "GOPATH not set, FAIL" && false)
+echo $GOPATH
