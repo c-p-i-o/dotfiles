@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# first setup Lacework-specific profile (needed for $GOPATH)
+source .lacework_profile
+
 # setup work directories
 echo "Setting up work directories"
 LACEWORK_DIR=$GOPATH/src/github.com/lacework
