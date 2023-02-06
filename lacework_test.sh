@@ -2,12 +2,13 @@
 set -Eeuvo pipefail
 
 # Set Coder-specific environment variables
-export CODER_SSH_PUBKEY="$HOME/foobarbaz"
+CODER_SSH_PUBKEY=$HOME/.ssh/coder.pub
+touch $CODER_SSH_PUBKEY
 export CODER_USER_EMAIL="foo.bar@baz.com"
 
 # Setup shell
 ./install.sh
-source .zshrc
+source $HOME/.zshrc
 
 # Smoke tests
 
@@ -21,5 +22,5 @@ type cddock
 echo $GOPATH
 
 # Check that .gitconfig is configured for Lacework
-grep "$CODER_SSH_PUBKEY" .gitconfig
-grep "$CODER_USER_EMAIL" .gitconfig
+grep "$CODER_SSH_PUBKEY" $HOME/.gitconfig
+grep "$CODER_USER_EMAIL" $HOME/.gitconfig
