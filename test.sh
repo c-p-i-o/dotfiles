@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -Eeuo pipefail
+set -Eeuvo pipefail
 
 # Setup shell
 ./install.sh

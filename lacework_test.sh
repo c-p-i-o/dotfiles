@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -Eeuo pipefail
+set -Eeuvo pipefail
 
 # Set Coder-specific environment variables
 export CODER_SSH_PUBKEY="$HOME/foobarbaz"
