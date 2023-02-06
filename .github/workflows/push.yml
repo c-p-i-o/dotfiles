@@ -21,3 +21,6 @@ jobs:
 
       - name: Test setup files
         run: ./test.sh
+
+      - name: Test Lacework-specific setup files
+        run: ./lacework_test.sh
