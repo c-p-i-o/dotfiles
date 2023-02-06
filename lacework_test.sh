@@ -2,7 +2,9 @@
 set -Eeuvo pipefail
 
 # Set Coder-specific environment variables
-CODER_SSH_PUBKEY=$HOME/.ssh/coder.pub
+CODER_SSH_PUBKEY_PATH=$HOME/.ssh
+CODER_SSH_PUBKEY=$CODER_SSH_PUBKEY_PATH/coder.pub
+mkdir -p $CODER_SSH_PUBKEY_PATH
 touch $CODER_SSH_PUBKEY
 export CODER_USER_EMAIL="foo.bar@baz.com"
 
