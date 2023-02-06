@@ -13,4 +13,4 @@ mkdir -p $LACEWORK_DEV_DIR
 # Lacework-specific git settings
 CODER_SSH_PUBKEY=$HOME/.ssh/coder.pub
 if [ -e "$CODER_SSH_PUBKEY" ]; then git config --global user.signingkey $CODER_SSH_PUBKEY; fi
-if [ -z "$CODER_USER_EMAIL" ]; then git config --global user.email $CODER_USER_EMAIL; fi
+if [[ -v CODER_USER_EMAIL ]]; then git config --global user.email $CODER_USER_EMAIL; fi
