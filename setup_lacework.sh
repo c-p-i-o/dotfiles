@@ -14,3 +14,9 @@ mkdir -p $LACEWORK_DEV_DIR
 CODER_SSH_PUBKEY=$HOME/.ssh/coder.pub
 if [[ -e "$CODER_SSH_PUBKEY" ]]; then git config --global user.signingkey $CODER_SSH_PUBKEY; fi
 if [[ -v CODER_USER_EMAIL ]]; then git config --global user.email $CODER_USER_EMAIL; fi
+
+# Use pinned version of Terraform for some Lacework-specific infra
+TFENV=tfenv
+if command -v $TFENV > /dev/null 2>&1; then
+    $TFENV use v1.0.11
+fi
