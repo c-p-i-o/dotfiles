@@ -19,3 +19,7 @@ type cddock
 
 # Check that GOPATH is set
 echo $GOPATH
+
+# Check that .gitconfig is configured for Lacework
+grep "$CODER_SSH_PUBKEY" .gitconfig
+grep "$CODER_USER_EMAIL" .gitconfig
