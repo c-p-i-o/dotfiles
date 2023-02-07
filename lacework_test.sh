@@ -23,6 +23,13 @@ type cddock
 # Check that GOPATH is set
 echo $GOPATH
 
+# Check that PATH contains essential paths
+echo $PATH | grep $GOPATH
+echo $PATH | grep "$HOME/.local/bin"
+echo $PATH | grep "$HOME/.linuxbrew/bin"
+echo $PATH | grep "$HOME/.cargo/bin"
+echo $PATH | grep "/usr/local/go/bin"
+
 # Check that .gitconfig is configured for Lacework
 grep "$CODER_SSH_PUBKEY" $HOME/.gitconfig
 grep "$CODER_USER_EMAIL" $HOME/.gitconfig
