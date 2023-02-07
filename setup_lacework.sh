@@ -20,3 +20,6 @@ TFENV=tfenv
 if command -v $TFENV > /dev/null 2>&1; then
     $TFENV use v1.0.11
 fi
+
+# Check that $GOPATH/bin is in PATH
+echo $PATH | grep "lwcode"

@@ -1,5 +1,6 @@
 # Set GOPATH to ~/lwcode
 export GOPATH=$HOME/lwcode
+export PATH=$PATH:$GOPATH/bin
 
 # AWS aliases
 alias awsint='export $(printf "AWS_ACCESS_KEY_ID=%s AWS_SECRET_ACCESS_KEY=%s AWS_SESSION_TOKEN=%s" \
