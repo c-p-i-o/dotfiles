@@ -15,6 +15,7 @@ source $HOME/.zshrc
 # Smoke tests
 
 # Test aliases
+type asso
 type awsint
 type cdag
 type cdcli
