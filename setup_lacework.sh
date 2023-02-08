@@ -19,6 +19,9 @@ if [[ -v CODER_USER_EMAIL ]]; then git config --global user.email $CODER_USER_EM
 TFENV=tfenv
 if command -v $TFENV > /dev/null 2>&1; then
     $TFENV use v1.0.11
+    echo "Using Terraform CLI v1.0.11"
+else
+    echo "$TFENV not found, not running $TFENV use v1.0.11"
 fi
 
 # Check that $GOPATH/bin is in PATH
