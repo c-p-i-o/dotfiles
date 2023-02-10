@@ -27,3 +27,36 @@ fi
 
 # Check that $GOPATH/bin is in PATH
 echo $PATH | grep "lwcode"
+
+# Add dependencies to build the agent (hopefully temporary)
+sudo apt-get update && \
+sudo apt-get install -y \
+    bison \
+    clang \
+    libcap-dev \
+    libdbus-1-dev \
+    libelf-dev \
+    libmagic-dev \
+    libmnl-dev \
+    protobuf-compiler
+
+if [ ! -d "/tmp/libpcap" ]; then git clone https://github.com/the-tcpdump-group/libpcap.git /tmp/libpcap; fi
+mkdir -p /tmp/libpcap/build
+cd /tmp/libpcap/build && cmake -DDISABLE_DBUS=1 -DDISABLE_RDMA=1 -DBUILD_SHARED_LIBS=1 .. && make && sudo make install
+
+OLDWD=$(pwd)
+cd / && \
+tar -czf /tmp/pcap.tgz \
+    usr/local/lib/libpcap.so* \
+    usr/local/lib/libpcap.a \
+    usr/local/include/pcap/ \
+    usr/local/bin/pcap-config \
+    usr/local/lib/pkgconfig/libpcap.pc \
+    $(find usr/local/share/man -name "pcap*") \
+    ;
+
+sudo tar -xzf /tmp/pcap.tgz -C / \
+    && rm /tmp/pcap.tgz \
+    ;
+
+cd $OLDWD
