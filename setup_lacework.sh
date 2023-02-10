@@ -17,8 +17,8 @@ if [[ -v CODER_USER_EMAIL ]]; then git config --global user.email $CODER_USER_EM
 
 # Use pinned version of Terraform for some Lacework-specific infra
 TFENV=tfenv
-if command -v $TFENV > /dev/null 2>&1; then
-    $TFENV use v1.0.11
+if PATH="$(brew --prefix)/bin:$PATH"; command -v $TFENV > /dev/null 2>&1; then
+    PATH="$(brew --prefix)/bin:$PATH"; $TFENV use v1.0.11
     echo "Using Terraform CLI v1.0.11"
 else
     echo "$TFENV not found, not running $TFENV use v1.0.11"
