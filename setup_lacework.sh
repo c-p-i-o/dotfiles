@@ -45,7 +45,6 @@ if [ ! -d "/tmp/libpcap" ]; then git clone https://github.com/the-tcpdump-group/
 mkdir -p /tmp/libpcap/build
 cd /tmp/libpcap/build && cmake -DDISABLE_DBUS=1 -DDISABLE_RDMA=1 -DBUILD_SHARED_LIBS=1 .. && make && sudo make install
 
-OLDWD=$(pwd)
 cd / && \
 tar -czf /tmp/pcap.tgz \
     usr/local/lib/libpcap.so* \
@@ -56,8 +55,7 @@ tar -czf /tmp/pcap.tgz \
     $(find usr/local/share/man -name "pcap*") \
     ;
 
+cd / && \
 sudo tar -xzf /tmp/pcap.tgz -C / \
     && rm /tmp/pcap.tgz \
     ;
-
-cd $OLDWD

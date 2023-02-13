@@ -14,10 +14,10 @@ jobs:
       - uses: actions/checkout@v3
         name: Clone this repository
 
-      - name: Setup `zsh`
+      - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y zsh
+          sudo apt-get install -y zsh cmake
 
       - name: Test setup files
         run: ./test.sh

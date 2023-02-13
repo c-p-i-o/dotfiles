@@ -34,3 +34,6 @@ echo $PATH | grep "/usr/local/go/bin"
 # Check that .gitconfig is configured for Lacework
 grep "$CODER_SSH_PUBKEY" $HOME/.gitconfig
 grep "$CODER_USER_EMAIL" $HOME/.gitconfig
+
+# Check that `libpcap` is installed
+ld -lpcap
