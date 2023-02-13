@@ -33,6 +33,7 @@ sudo apt-get update && \
 sudo apt-get install -y \
     bison \
     clang \
+    flex \
     libcap-dev \
     libdbus-1-dev \
     libelf-dev \
