@@ -1,4 +1,9 @@
+# Set GOPATH to ~/lwcode
+export GOPATH=$HOME/lwcode
+export PATH=$PATH:$GOPATH/bin
+
 # AWS aliases
+alias asso='aws sso login --profile $(aws configure list-profiles | grep 561021084946)'
 alias awsint='export $(printf "AWS_ACCESS_KEY_ID=%s AWS_SECRET_ACCESS_KEY=%s AWS_SESSION_TOKEN=%s" \
     $(aws sts assume-role \
         --profile lw-admin-role-561021084946 \

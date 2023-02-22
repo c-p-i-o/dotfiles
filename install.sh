@@ -7,6 +7,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # install p10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+# check for `omz` updates
+omz update
+
 # copy dotfiles (adapted from coder default script)
 echo "Copying dotfiles"
 for dotfile in "$(pwd)/".*; do
@@ -26,7 +29,7 @@ for dotfile in "$(pwd)/".*; do
   fi
 
   echo "Copying $dotfile"
-  cp "$dotfile" "$HOME"
+  cp -r "$dotfile" "$HOME"
 done
 
 # Lacework-specific setup

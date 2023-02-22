@@ -1,7 +1,7 @@
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # setup PATH
-export PATH=$PATH:$HOME.local/bin:$HOME.linuxbrew/bin:$HOME.cargo/bin:/usr/local/go/bin:/bin:$HOME/work/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.linuxbrew/bin:$HOME/.cargo/bin:/usr/local/go/bin
 
 # Set up GPG to write to the terminal
 export GPG_TTY=$(tty)
@@ -146,4 +146,4 @@ compinit -i
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Lacework-specific shell aliases
-source .lacework_profile
+test -e "${HOME}/.lacework_profile" && source "${HOME}/.lacework_profile" || true
