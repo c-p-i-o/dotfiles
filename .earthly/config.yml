@@ -1,4 +1,3 @@
 global:
   cache_size_mb: 30000
-global:
   buildkit_additional_args: ["-e", "BUILDKIT_STEP_LOG_MAX_SIZE=-1", "-e", "BUILDKIT_STEP_LOG_MAX_SPEED=-1"]
