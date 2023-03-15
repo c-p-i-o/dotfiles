@@ -40,3 +40,6 @@ ld -lpcap
 
 # Test correctness of `.earthly/config.yml`
 earthly github.com/earthly/hello-world+hello
+
+# Check that `eksctl` is installed
+eksctl version

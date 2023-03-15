@@ -59,3 +59,7 @@ cd / && \
 sudo tar -xzf /tmp/pcap.tgz -C / \
     && rm /tmp/pcap.tgz \
     ;
+
+# Install `eksctl`
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+sudo install /tmp/eksctl /usr/local/bin
