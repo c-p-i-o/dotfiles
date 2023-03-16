@@ -43,3 +43,6 @@ earthly github.com/earthly/hello-world+hello
 
 # Check that `eksctl` is installed
 eksctl version
+
+# Check that `minikube` is installed
+minikube version
